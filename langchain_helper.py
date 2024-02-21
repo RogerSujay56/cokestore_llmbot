@@ -10,21 +10,22 @@ from langchain.prompts.prompt import PromptTemplate
 
 from few_shots import few_shots
 import os
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
+import streamlit as st
 
 
 
 def get_few_shot_db_chain():
-    db_user=os.environ["DB_USER"]
-    db_password=os.environ["DB_PASSWORD"]
-    db_host=os.environ["DB_HOST"]
-    db_name=os.environ["DB_NAME"]
+    db_user=st.secrets["DB_USER"]
+    db_password=st.secrets["DB_PASSWORD"]
+    db_host=st.secrets["DB_HOST"]
+    db_name=st.secrets["DB_NAME"]
     db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
                               sample_rows_in_table_info=3)
     
-    llm=GooglePalm(google_api_key=os.environ["GOOGLE_API_KEY"],temperature=0.1)
-    embeddings=HuggingFaceEmbeddings(model_name=os.environ["MODEL_NAME"])
+    llm=GooglePalm(google_api_key=st.secrets["GOOGLE_API_KEY"],temperature=0.1)
+    embeddings=HuggingFaceEmbeddings(model_name=st.secrets["MODEL_NAME"])
 
     to_vectorize=[" ".join(example.values()) for example in few_shots]
 
