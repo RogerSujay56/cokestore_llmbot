@@ -8,7 +8,10 @@ This is a project using Google Palm and Langchain technologies to build a system
   
 The system will be smart enough to understand these questions (few shot learning) and fetch accurate information from the database.
 
-![]("[success1.png](https://github.com/RogerSujay56/cokestore_llmbot/blob/main/success1.png)")
+## Results
+![success1.png](https://github.com/RogerSujay56/cokestore_llmbot/blob/main/success1.png)
+![success2.png](https://github.com/RogerSujay56/cokestore_llmbot/blob/main/success2.png)
+![success3.png](https://github.com/RogerSujay56/cokestore_llmbot/blob/main/success3.png)
 
 
 ## Project Highlights
