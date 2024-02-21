@@ -15,7 +15,9 @@ if clicked:
             st.header("Answer")
             st.write(response)
         except Exception as e:
+
             st.error("Sorry, there was an error processing your request.")
             st.write("We will get back to you as soon as possible.")
+            st.write(e)
     else:
         st.warning("Please enter a question.")
