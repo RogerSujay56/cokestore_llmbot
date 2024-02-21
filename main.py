@@ -3,14 +3,19 @@ from langchain_helper import get_few_shot_db_chain
 
 st.title("Coke Store: Database Q&A 🥤")
 
-question=st.text_input("Question: ")
+question = st.text_input("Question: ")
+clicked = st.button("Get Answer")
 
-if question:
-    chain=get_few_shot_db_chain()
-    response=chain.run(question)
-    print('response===',response)
+if clicked:
+    if question:
+        try:
+            chain = get_few_shot_db_chain()
+            response = chain.run(question)
 
-    st.header("Answer")
-    st.write(response)
-    
-    
+            st.header("Answer")
+            st.write(response)
+        except Exception as e:
+            st.error("Sorry, there was an error processing your request.")
+            st.write("We will get back to you as soon as possible.")
+    else:
+        st.warning("Please enter a question.")
