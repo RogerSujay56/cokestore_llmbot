@@ -8,7 +8,7 @@ This is a project using Google Palm and Langchain technologies to build a system
   
 The system will be smart enough to understand these questions (few shot learning) and fetch accurate information from the database.
 
-![](atliq_tees.png)
+![]("success1.png")
 
 
 ## Project Highlights
